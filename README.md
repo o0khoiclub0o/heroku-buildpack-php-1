@@ -6,7 +6,7 @@
 * Supports PHP 5.3, 5.4 and 5.5
 * Uses the memory of the dyno more efficiently by going with NGINX and PHP-FPM.
 * Supports Composer out of the box
-* No writing NGINX configuration files: supports Classic PHP, Silex and Symfony 2 apps with simple configuration driven by your `composer.json`.
+* No writing NGINX configuration files: supports Classic PHP, Silex, Laravel 4 and Symfony 2 apps with simple configuration driven by your `composer.json`.
 * Zero-Configuration Symfony 2 deployment.
 
 ## What works?
