@@ -1,0 +1,31 @@
+#!/bin/bash
+
+BUILD_DIR="$2"
+basedir="$( cd -P "$( dirname "$0" )" && pwd )"
+
+function requires_laravel4() {
+    [ $(jq --raw-output '.require["laravel/framework"]' < "$BUILD_DIR/composer.json") != "null" ]
+}
+
+function sets_framework_laravel4() {
+    [ $(jq --raw-output '.extra.heroku.framework' < "$BUILD_DIR/composer.json") == "laravel4" ]
+}
+
+case "$1" in
+    detect)
+        if [ ! -f "$BUILD_DIR/composer.json" ]; then
+            exit 1
+        fi
+
+        if requires_laravel4 || sets_framework_laravel4; then
+            echo "-----> Detected Laravel 4 App"
+            exit 0
+        else
+            exit 1
+        fi
+        ;;
+    compile)
+        echo "-----> Setting up Laravel 4 app"
+        cp "$basedir/../conf/nginx/laravel4.conf.erb" "$BUILD_DIR/conf/site.conf.erb"
+        ;;
+esac
