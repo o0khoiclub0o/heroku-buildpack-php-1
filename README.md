@@ -19,11 +19,11 @@
 
 Use the `--buildpack` parameter when creating a new app:
 
-    heroku create --buildpack https://github.com/CHH/heroku-buildpack-php myapp
+    heroku create --buildpack https://github.com/minhdanh/heroku-buildpack-php-1 myapp
 
 Or set the `BUILDPACK_URL` config var on an existing app:
 
-    heroku config:set BUILDPACK_URL=https://github.com/CHH/heroku-buildpack-php
+    heroku config:set BUILDPACK_URL=https://github.com/minhdanh/heroku-buildpack-php-1
 
 * * *
 
