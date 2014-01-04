@@ -93,7 +93,7 @@ function install_composer_deps() {
         done
     fi
     echo "-----> Self-upding composer"
-    vendor/composer/bin/composer.phar self-update
+    vendor/composer/bin/composer.phar self-update | indent
     
     echo "-----> Installing application dependencies with Composer"
     {
