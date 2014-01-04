@@ -104,7 +104,7 @@ function install_composer_deps() {
             --no-interaction \
             --no-dev \
             --profile \
-            --vvv
+            -vvv
         cd "$cwd"
     } | indent
 }
