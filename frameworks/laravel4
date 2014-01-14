@@ -29,10 +29,10 @@ case "$1" in
         cp "$basedir/../conf/nginx/laravel4.conf.erb" "$BUILD_DIR/conf/site.conf.erb"
 	if [ -z "$CLEARDB_DATABASE_URL" ]; then
 		echo "-----> Writing database.php"
-		HEROKU_DB_USER = `echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3`
-		HEROKU_DB_PASS = `echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f1`
-		HEROKU_DB_HOST = `echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f1`
-		HEROKU_DB_NAME = `echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f2 | cut -d\? -f1`
+		HEROKU_DB_USER=`echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3`
+		HEROKU_DB_PASS=`echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f1`
+		HEROKU_DB_HOST=`echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f1`
+		HEROKU_DB_NAME=`echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f2 | cut -d\? -f1`
 		cp -f "$basedir/../conf/frameworks/laravel4/database.php" "$BUILD_DIR/app/config/database.php"
 		sed -i 's/DB_HOST/$HEROKU_DB_HOST/g;s/DB_USER/$HEROKU_DB_USER/g;s/DB_PASS/$HEROKU_DB_PASS/g;s/DB_NAME/$HEROKU_DB_NAME/g' "$BUILD_DIR/app/config/database.php"
 	fi
