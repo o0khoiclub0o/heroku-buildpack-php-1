@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Release time"
-env
 cat << EOF
 ---
 addons:
