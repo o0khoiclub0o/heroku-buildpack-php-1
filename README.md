@@ -24,6 +24,11 @@ Use the `--buildpack` parameter when creating a new app:
 Or set the `BUILDPACK_URL` config var on an existing app:
 
     heroku config:set BUILDPACK_URL=https://github.com/minhdanh/heroku-buildpack-php-1
+    
+* * *
+Note: If you're deploying Laravel 4, you may want to write a database.php file to read information from DATABASE_URL, so you need to enable user-env-compile
+    
+    heroku labs:enable user-env-compile
 
 * * *
 
