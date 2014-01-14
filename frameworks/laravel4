@@ -27,7 +27,6 @@ case "$1" in
     compile)
         echo "-----> Setting up Laravel 4 app"
         cp "$basedir/../conf/nginx/laravel4.conf.erb" "$BUILD_DIR/conf/site.conf.erb"
-        env
         if [ -n "$CLEARDB_DATABASE_URL" ]; then
     		echo "-----> Writing database.php"
     		HEROKU_DB_USER=$(echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3)
