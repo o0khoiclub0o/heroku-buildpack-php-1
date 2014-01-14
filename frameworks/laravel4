@@ -34,7 +34,6 @@ case "$1" in
 		HEROKU_DB_HOST=`echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f1`
 		HEROKU_DB_NAME=`echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f2 | cut -d/ -f2 | cut -d\? -f1`
 		cp -f "$basedir/../conf/frameworks/laravel4/database.php" "$BUILD_DIR/app/config/database.php"
-		cp -f "$basedir/../conf/frameworks/laravel4/database.php" "$BUILD_DIR/app/config/database.php.sample"
 		sed -i "s/DB_HOST/$HEROKU_DB_HOST/g;s/DB_USER/$HEROKU_DB_USER/g;s/DB_PASS/$HEROKU_DB_PASS/g;s/DB_NAME/$HEROKU_DB_NAME/g" "$BUILD_DIR/app/config/database.php"
 	fi
         ;;
