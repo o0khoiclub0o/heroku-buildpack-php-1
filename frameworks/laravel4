@@ -31,6 +31,8 @@ case "$1" in
     		echo "-----> Writing database.php"
     		export HEROKU_DB_USER=$(echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3)
             echo "user: " $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3
+            echo "shit"
+            echo "shit"
     		echo $HEROKU_DB_USER
     		export HEROKU_DB_PASS=$(echo $CLEARDB_DATABASE_URL | cut -d: -f3 | cut -d@ -f1)
     		echo $HEROKU_DB_PASS
