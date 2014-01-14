@@ -30,7 +30,7 @@ case "$1" in
         if [ -z "$CLEARDB_DATABASE_URL" ]; then
     		echo "-----> Writing database.php"
     		export HEROKU_DB_USER=$(echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3)
-            echo "user: " $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3
+            echo $CLEARDB_DATABASE_URL | cut -d: -f2 | cut -d/ -f3
             echo "shit"
             echo "shit"
     		echo $HEROKU_DB_USER
