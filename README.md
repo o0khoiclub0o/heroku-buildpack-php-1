@@ -1,5 +1,5 @@
 # Advanced PHP Heroku Build Pack
-================================
+
 
 This is a fork from https://github.com/CHH/heroku-buildpack-php to support Laravel 4.
 For the full Readme, please refer to https://github.com/CHH/heroku-buildpack-php
