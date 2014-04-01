@@ -103,8 +103,7 @@ function install_composer_deps() {
             --optimize-autoloader \
             --no-interaction \
             --no-dev \
-            --profile \
-            -vvv
+            --profile
         cd "$cwd"
     } | indent
 }
