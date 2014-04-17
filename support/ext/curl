@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl http://sss-misc.s3.amazonaws.com/curl.so > /tmp/curl.so
+cp /tmp/curl.so "$EXT_DIR/curl.so"
+echo "extension=curl.so" > "$PREFIX/etc/conf.d/curl.ini"

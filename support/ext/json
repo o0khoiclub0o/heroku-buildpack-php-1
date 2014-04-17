@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl http://sss-misc.s3.amazonaws.com/json.so > /tmp/json.so
+cp /tmp/json.so "$EXT_DIR/json.so"
+echo "extension=json.so" > "$PREFIX/etc/conf.d/json.ini"
