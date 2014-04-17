@@ -88,8 +88,10 @@ function install_composer_deps() {
     if [ -n "$required_extensions" ]; then
         echo "-----> Bundling additional extensions $required_extensions"
         for ext in $required_extensions; do
-            echo "$ext" | indent
-            fetch_package "ext/$(php_api_version)/php-${ext}" "/app/vendor/php" | indent
+	    if [ "$ext" != "curl" ]; then
+                echo "$ext" | indent
+                fetch_package "ext/$(php_api_version)/php-${ext}" "/app/vendor/php" | indent
+	    fi
         done
     fi
     echo "-----> Self-updating composer"
