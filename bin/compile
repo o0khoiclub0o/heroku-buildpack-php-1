@@ -273,8 +273,8 @@ fetch_package "ext/$(php_api_version)/php-redis" "/app/vendor/php" | indent
 echo "       mongo"
 fetch_package "ext/$(php_api_version)/php-mongo" "/app/vendor/php" | indent
 echo "       curl"
-curl http://sss-misc.s3.amazonaws.com/curl.so > /tmp/curl.so
-cp /tmp/curl.so "$EXT_DIR/curl.so"
+local ext_dir=/app/vendor/php/lib/php/extensions/no-debug-non-zts-$(php_api_version)
+curl http://sss-misc.s3.amazonaws.com/curl.so > "${ext_dir}/curl.so"
 echo "extension=curl.so" > "/app/vendor/php/etc/conf.d/curl.ini"
 echo "       json"
 curl http://sss-misc.s3.amazonaws.com/json.so > /tmp/json.so
