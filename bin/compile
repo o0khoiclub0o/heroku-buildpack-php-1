@@ -277,8 +277,7 @@ ext_dir=/app/vendor/php/lib/php/extensions/no-debug-non-zts-$(php_api_version)
 curl http://sss-misc.s3.amazonaws.com/curl.so > "${ext_dir}/curl.so"
 echo "extension=curl.so" > "/app/vendor/php/etc/conf.d/curl.ini"
 echo "       json"
-curl http://sss-misc.s3.amazonaws.com/json.so > /tmp/json.so
-cp /tmp/json.so "$EXT_DIR/json.so"
+curl http://sss-misc.s3.amazonaws.com/json.so > "${ext_dir}/json.so"
 echo "extension=json.so" > "/app/vendor/php/etc/conf.d/json.ini"
 
 if [ -f "$BUILD_DIR/composer.json" ] && package_newrelic_enabled; then
